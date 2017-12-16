@@ -14,17 +14,14 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLabel" name="label">
+   <widget class="GraphicsLayoutWidget" name="graphicsView">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>20</y>
-      <width>341</width>
-      <height>201</height>
+      <y>-10</y>
+      <width>651</width>
+      <height>471</height>
      </rect>
-    </property>
-    <property name="text">
-     <string/>
     </property>
    </widget>
   </widget>
@@ -42,8 +39,49 @@
      <string>File</string>
     </property>
     <addaction name="actionopen"/>
+    <addaction name="actionsave"/>
+    <addaction name="actionredo"/>
+   </widget>
+   <widget class="QMenu" name="menuprocess">
+    <property name="title">
+     <string>Process</string>
+    </property>
+    <widget class="QMenu" name="menueage_detect">
+     <property name="title">
+      <string>eage detect</string>
+     </property>
+     <addaction name="actionlaplace"/>
+     <addaction name="actioncanny"/>
+     <addaction name="actionsobel"/>
+     <addaction name="actionprewitt"/>
+    </widget>
+    <addaction name="menueage_detect"/>
+    <addaction name="actiongray"/>
+   </widget>
+   <widget class="QMenu" name="menueffects">
+    <property name="title">
+     <string>Effects</string>
+    </property>
+    <addaction name="actiondraw"/>
+   </widget>
+   <widget class="QMenu" name="menuAnylize">
+    <property name="title">
+     <string>Anylize</string>
+    </property>
+    <addaction name="actionDFT"/>
+    <addaction name="actionhistogram"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionopencv_window"/>
    </widget>
    <addaction name="menufile"/>
+   <addaction name="menuprocess"/>
+   <addaction name="menueffects"/>
+   <addaction name="menuAnylize"/>
+   <addaction name="menuOptions"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -59,8 +97,73 @@
     <string>open</string>
    </property>
   </action>
+  <action name="actionsave">
+   <property name="text">
+    <string>save</string>
+   </property>
+  </action>
+  <action name="actionlaplace">
+   <property name="text">
+    <string>laplace</string>
+   </property>
+  </action>
+  <action name="actioncanny">
+   <property name="text">
+    <string>canny</string>
+   </property>
+  </action>
+  <action name="actionsobel">
+   <property name="text">
+    <string>sobel</string>
+   </property>
+  </action>
+  <action name="actionprewitt">
+   <property name="text">
+    <string>prewitt</string>
+   </property>
+  </action>
+  <action name="actiongray">
+   <property name="text">
+    <string>gray</string>
+   </property>
+  </action>
+  <action name="actionredo">
+   <property name="text">
+    <string>redo</string>
+   </property>
+  </action>
+  <action name="actiondraw">
+   <property name="text">
+    <string>draw</string>
+   </property>
+  </action>
+  <action name="actionDFT">
+   <property name="text">
+    <string>DFT</string>
+   </property>
+  </action>
+  <action name="actionhistogram">
+   <property name="text">
+    <string>histogram</string>
+   </property>
+  </action>
+  <action name="actionopencv_window">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>opencv window</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>GraphicsLayoutWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
